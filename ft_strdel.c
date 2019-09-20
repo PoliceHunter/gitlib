@@ -6,7 +6,7 @@
 /*   By: tmyrcell <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/12 15:58:22 by tmyrcell          #+#    #+#             */
-/*   Updated: 2019/09/12 16:03:50 by tmyrcell         ###   ########.fr       */
+/*   Updated: 2019/09/20 12:50:55 by tmyrcell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,6 @@
 
 void	ft_strdel(char **as)
 {
-	ft_memdel((void **)(as));
+	if (as)
+		ft_memdel((void **)(as));
 }

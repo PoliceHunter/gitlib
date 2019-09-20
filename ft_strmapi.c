@@ -6,7 +6,7 @@
 /*   By: tmyrcell <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/12 19:45:24 by tmyrcell          #+#    #+#             */
-/*   Updated: 2019/09/12 19:48:24 by tmyrcell         ###   ########.fr       */
+/*   Updated: 2019/09/20 12:57:48 by tmyrcell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,14 @@
 
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
-	int		i;
+	size_t	i;
 	char	*tmp;
 
-	tmp = ft_strnew(ft_strlen((char *)s));
-	i = 0;
 	if (s == NULL || f == NULL)
 		return (NULL);
+	if (!(tmp = ft_strnew(ft_strlen((char *)s))))
+		return (NULL);
+	i = 0;
 	while (s[i])
 	{
 		tmp[i] = (*f)(i, s[i]);

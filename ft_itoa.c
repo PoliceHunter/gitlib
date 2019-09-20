@@ -6,17 +6,19 @@
 /*   By: tmyrcell <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/17 17:56:01 by tmyrcell          #+#    #+#             */
-/*   Updated: 2019/09/17 19:44:10 by tmyrcell         ###   ########.fr       */
+/*   Updated: 2019/09/20 17:34:37 by tmyrcell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_len(long nb)
+static int		ft_len(long nb)
 {
 	int		len;
 
 	len = 0;
+	if (nb == 0)
+		return (1);
 	if (nb < 0)
 	{
 		nb = nb * -1;
@@ -30,7 +32,7 @@ int		ft_len(long nb)
 	return (len);
 }
 
-char	*ft_itoa(int n)
+char			*ft_itoa(int n)
 {
 	char	*str;
 	long	dig;

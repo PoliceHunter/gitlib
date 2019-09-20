@@ -6,30 +6,55 @@
 /*   By: tmyrcell <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/17 12:36:59 by tmyrcell          #+#    #+#             */
-/*   Updated: 2019/09/17 17:04:46 by tmyrcell         ###   ########.fr       */
+/*   Updated: 2019/09/20 17:19:33 by tmyrcell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strtrim(char const *s)
+static	int		start_index(char const *s)
+{
+	size_t begin;
+
+	begin = 0;
+	while (s[begin] == ' ' || s[begin] == '\t' || s[begin] == '\n')
+		begin++;
+	return (begin);
+}
+
+static	int		end_index(char const *s)
+{
+	size_t len;
+
+	len = ft_strlen(s) - 1;
+	while (s[len] == ' ' || s[len] == '\t' || s[len] == '\n')
+		len--;
+	return (len);
+}
+
+char			*ft_strtrim(char const *s)
 {
 	size_t	begin;
-	size_t	len;
+	size_t	end;
 	size_t	index;
 	char	*result;
 
-	begin = 0;
-	index = 0;
-	len = ft_strlen((char *)s);
-	result = (char *)malloc(sizeof(char) * len);
-	if (!result || !s)
+	if (!s)
 		return (NULL);
-	while (s[len - 1] == ' ' || s[len - 1] == '\t' || s[len - 1] == '\n')
-		len--;
-	while (s[begin] == ' ' || s[begin] == '\t' || s[begin] == '\n')
-		begin++;
-	while (begin < len)
+	if (!*s)
+	{
+		result = (char *)malloc(sizeof(char) * 1);
+		result[0] = '\0';
+		return (result);
+	}
+	index = 0;
+	begin = start_index(s);
+	end = end_index(s);
+	if (s[end] == '\0')
+		return (result = (char *)malloc(sizeof(char) * 1));
+	if (!(result = (char *)malloc(sizeof(char) * (end - begin + 2))))
+		return (NULL);
+	while (begin < end + 1)
 		result[index++] = s[begin++];
 	result[index] = '\0';
 	return (result);

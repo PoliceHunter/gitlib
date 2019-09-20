@@ -6,33 +6,37 @@
 /*   By: tmyrcell <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/10 17:10:42 by tmyrcell          #+#    #+#             */
-/*   Updated: 2019/09/11 18:47:09 by tmyrcell         ###   ########.fr       */
+/*   Updated: 2019/09/20 12:33:16 by tmyrcell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_atoi(char *str)
+int		ft_atoi(const char *str)
 {
-	int i;
-	int sig;
+	long long	i;
+	int			sig;
+	int			j;
 
+	j = 0;
 	i = 0;
 	sig = 1;
 	while (*str == ' ' || *str == '\t' || *str == '\n'
 			|| *str == '\r' || *str == '\v' || *str == '\f')
 		str++;
-	if (*str == '+')
-		str++;
-	else if (*str == '-')
+	if (*str == '-' || *str == '+')
 	{
-		sig = -1;
+		if (*str == '-')
+			sig = -1;
 		str++;
 	}
-	while (*str >= '0' && *str <= '9')
+	while (str[j] >= '0' && str[j] <= '9' && str[j] != '\0')
 	{
-		i = i * 10 + *str - '0';
-		str++;
+		i = i * 10 + str[j++] - '0';
 	}
+	if ((j > 19 || i >= 9223372036854775807) && sig == 1)
+		return (-1);
+	else if ((j > 19 || i >= 9223372036854775807) && sig == -1)
+		return (0);
 	return (i * sig);
 }

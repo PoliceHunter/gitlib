@@ -6,7 +6,7 @@
 /*   By: tmyrcell <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/09 15:46:02 by tmyrcell          #+#    #+#             */
-/*   Updated: 2019/09/11 18:51:25 by tmyrcell         ###   ########.fr       */
+/*   Updated: 2019/09/19 16:02:37 by tmyrcell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	*ft_memset(void *str, int c, size_t n)
 
 	i = 0;
 	ptr = (char *)str;
-	if (str == NULL)
+	if (!ptr && !c && !n)
 		return (NULL);
 	while (i < n)
 	{

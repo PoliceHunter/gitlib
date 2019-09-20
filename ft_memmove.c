@@ -6,7 +6,7 @@
 /*   By: tmyrcell <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/09 19:13:01 by tmyrcell          #+#    #+#             */
-/*   Updated: 2019/09/11 19:38:47 by tmyrcell         ###   ########.fr       */
+/*   Updated: 2019/09/19 15:56:21 by tmyrcell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,8 @@ void	*ft_memmove(void *dst, const void *src, size_t n)
 	i = 0;
 	ptr = (unsigned char *)src;
 	ktr = (unsigned char *)dst;
+	if (!ptr && !ktr)
+		return (NULL);
 	if (ptr < ktr)
 	{
 		while (n--)

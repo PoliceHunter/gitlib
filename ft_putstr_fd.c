@@ -6,7 +6,7 @@
 /*   By: tmyrcell <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/17 17:27:05 by tmyrcell          #+#    #+#             */
-/*   Updated: 2019/09/17 17:35:15 by tmyrcell         ###   ########.fr       */
+/*   Updated: 2019/09/20 13:25:12 by tmyrcell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@ void	ft_putstr_fd(char const *s, int fd)
 {
 	int	i;
 
+	if (!s || !fd)
+		return ;
 	i = 0;
 	while (s[i] != '\0')
 	{

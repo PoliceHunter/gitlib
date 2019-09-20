@@ -6,7 +6,7 @@
 /*   By: tmyrcell <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/10 20:00:46 by tmyrcell          #+#    #+#             */
-/*   Updated: 2019/09/17 19:56:41 by tmyrcell         ###   ########.fr       */
+/*   Updated: 2019/09/20 18:25:40 by tmyrcell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 # include <string.h>
 # include <stdlib.h>
 
-int		ft_atoi(char *str);
+int		ft_atoi(const char *str);
 void	ft_bzero(void *s, size_t n);
 int		ft_isprint(int c);
 int		ft_isascii(int c);
@@ -34,11 +34,11 @@ int		ft_memcmp(const void *s1, const void *s2, size_t n);
 void	*ft_memchr(const void *s, int c, size_t n);
 char	*ft_strcat(char *dst, const char *src);
 char	*ft_strchr(const char *s, int c);
-int		ft_strcmp(char *s1, char *s2);
+int		ft_strcmp(const char *s1, const char *s2);
 char	*ft_strcpy(char *dst, const char *src);
-char	*ft_strdup(char *src);
+char	*ft_strdup(const char *src);
 size_t	ft_strlcat(char *dst, const char *src, size_t size);
-int		ft_strlen(char *str);
+int		ft_strlen(const char *str);
 char	*ft_strncat(char *dst, const char *src, size_t n);
 int		ft_strncmp(const char *str1, const char *str2, size_t num);
 char	*ft_strncpy(char *dst, const char *src, size_t n);

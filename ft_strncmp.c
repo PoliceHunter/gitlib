@@ -6,7 +6,7 @@
 /*   By: tmyrcell <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/10 16:34:30 by tmyrcell          #+#    #+#             */
-/*   Updated: 2019/09/14 13:55:19 by tmyrcell         ###   ########.fr       */
+/*   Updated: 2019/09/19 15:37:47 by tmyrcell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ int		ft_strncmp(const char *str1, const char *str2, size_t num)
 		return (0);
 	while ((*str1) && (str1[i] == str2[i]) && (--num))
 	{
-		if (str1[i] != str2[i])
+		if (str1[i] != str2[i] || str1[i] == '\0' || str2[i] == '\0')
 			return (str1[i] - str2[i]);
 		i++;
 	}
