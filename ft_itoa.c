@@ -6,7 +6,7 @@
 /*   By: tmyrcell <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/17 17:56:01 by tmyrcell          #+#    #+#             */
-/*   Updated: 2019/09/20 17:34:37 by tmyrcell         ###   ########.fr       */
+/*   Updated: 2019/09/21 15:23:43 by tmyrcell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,29 +34,27 @@ static int		ft_len(long nb)
 
 char			*ft_itoa(int n)
 {
-	char	*str;
-	long	dig;
-	int		i;
+	char	*result;
+	int		r_index;
 
-	dig = n;
-	i = ft_len(dig);
-	if (!(str = (char*)malloc(sizeof(char) * (i + 1))))
+	r_index = ft_len(n);
+	if (!(result = (char*)malloc(sizeof(char) * (r_index + 1))))
 		return (NULL);
-	str[i--] = '\0';
-	if (dig == 0)
+	result[r_index--] = '\0';
+	if (n == 0)
 	{
-		str[0] = 48;
-		return (str);
+		result[0] = '0';
+		return (result);
 	}
-	if (dig < 0)
+	if (n < 0)
 	{
-		str[0] = '-';
-		dig = dig * -1;
+		result[0] = '-';
+		n *= -1;
 	}
-	while (dig > 0)
+	while (n != 0)
 	{
-		str[i--] = 48 + (dig % 10);
-		dig = dig / 10;
+		result[r_index--] = '0' + (n % 10);
+		n /= 10;
 	}
-	return (str);
+	return (result);
 }

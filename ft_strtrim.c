@@ -6,7 +6,7 @@
 /*   By: tmyrcell <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/17 12:36:59 by tmyrcell          #+#    #+#             */
-/*   Updated: 2019/09/20 17:19:33 by tmyrcell         ###   ########.fr       */
+/*   Updated: 2019/09/21 15:12:12 by tmyrcell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ char			*ft_strtrim(char const *s)
 	size_t	index;
 	char	*result;
 
-	if (!s)
+	if (s == NULL)
 		return (NULL);
 	if (!*s)
 	{

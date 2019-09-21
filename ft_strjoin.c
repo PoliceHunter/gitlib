@@ -6,7 +6,7 @@
 /*   By: tmyrcell <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/14 18:48:06 by tmyrcell          #+#    #+#             */
-/*   Updated: 2019/09/20 13:24:11 by tmyrcell         ###   ########.fr       */
+/*   Updated: 2019/09/21 15:17:26 by tmyrcell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,19 +18,18 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	size_t	j;
 	char	*tmp;
 
-	if (!s1 || !s2)
+	if (s1 == NULL || s2 == NULL)
 		return (NULL);
-	i = ft_strlen((char *)s1);
-	j = ft_strlen((char *)s2);
-	if (!(tmp = (char *)malloc(sizeof(char) * (i + j) + 1)))
+	if (!(tmp = (char *)malloc(sizeof(char) * ((ft_strlen((char *)s1))
+		+ ft_strlen((char *)s2) + 1))))
 		return (NULL);
+	j = 0;
 	i = 0;
 	while (s1[i] != '\0')
 	{
 		tmp[i] = (char)s1[i];
 		i++;
 	}
-	j = 0;
 	while (s2[j] != '\0')
 	{
 		tmp[i] = (char)s2[j];
