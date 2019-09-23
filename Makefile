@@ -6,7 +6,7 @@
 #    By: tmyrcell <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/09/10 20:28:46 by tmyrcell          #+#    #+#              #
-#    Updated: 2019/09/18 21:36:29 by tmyrcell         ###   ########.fr        #
+#    Updated: 2019/09/23 17:26:31 by tmyrcell         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -140,4 +140,4 @@ fclean: clean
 re:	fclean all
 
 #Non-File Targets
-.PHONY: all clean 
+.PHONY: all clean fclean re

@@ -6,7 +6,7 @@
 /*   By: tmyrcell <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/10 17:10:42 by tmyrcell          #+#    #+#             */
-/*   Updated: 2019/09/21 20:05:46 by tmyrcell         ###   ########.fr       */
+/*   Updated: 2019/09/21 21:17:21 by tmyrcell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,14 +51,15 @@ int					ft_atoi(const char *str)
 		return (0);
 	while (ft_isdigit(str[index]) && str[index] != '\0')
 	{
-		if ((str[index] - '0') + result * 10 < result)
+		if ((sig == 1 && (result * 10 + (sig * (str[index] - '0')) < result)) ||
+			(sig == -1 && (result * 10 + (sig * (str[index] - '0')) > result)))
 		{
 			if (sig == 1)
 				return (-1);
 			return (0);
 		}
-		result = result * 10 + str[index] - '0';
+		result = result * 10 + (sig * (str[index] - '0'));
 		index++;
 	}
-	return (result * sig);
+	return (result);
 }

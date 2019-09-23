@@ -6,7 +6,7 @@
 /*   By: tmyrcell <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/10 20:00:46 by tmyrcell          #+#    #+#             */
-/*   Updated: 2019/09/20 20:31:03 by tmyrcell         ###   ########.fr       */
+/*   Updated: 2019/09/23 20:58:24 by tmyrcell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,13 @@
 # include <unistd.h>
 # include <string.h>
 # include <stdlib.h>
+
+typedef struct		s_list
+{
+	void			*content;
+	size_t			content_size;
+	struct s_list	*next;
+}					t_list;
 
 int		ft_atoi(const char *str);
 void	ft_bzero(void *s, size_t n);
